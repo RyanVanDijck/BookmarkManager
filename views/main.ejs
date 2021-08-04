@@ -1,8 +1,13 @@
 <h1>Bookmarks:</h1>
 <div>
-    <% url.map(url => { %>
-<p id ="bookmark"> <%= url.url %></p>
+    <% url.map((url, index) => { %>
+<p id ="bookmark-<%= index %>"> <%= url.url %></p>
+        <form method="POST" action='/start/<%= url.id%>?_method=DELETE'>
+            <input type="submit" value="Delete" name="deleteSubmit">
+        </form>
     <% }) %>
+
+
 </div>
 
 
